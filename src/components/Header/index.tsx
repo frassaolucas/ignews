@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
 
+import { ActiveLink } from '../ActiveLink';
 import { SignInButton } from '../SignInButton';
 
 import LogoImg from '../../../public/images/logo.svg';
@@ -14,8 +14,13 @@ export function Header() {
         <Image src={LogoImg} alt="ig.news" />
 
         <nav>
-          <a className={styles.active}>Home</a>
-          <a>Posts</a>
+          <ActiveLink activeClassName={styles.active} href="/">
+            <a>Home</a>
+          </ActiveLink>
+
+          <ActiveLink activeClassName={styles.active} href="/posts">
+            <a>Posts</a>
+          </ActiveLink>
         </nav>
 
         <SignInButton />
